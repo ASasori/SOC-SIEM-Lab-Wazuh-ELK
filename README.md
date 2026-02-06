@@ -1,58 +1,29 @@
-# Wazuh containers for Docker
+# Personal SOC Lab & SIEM Implementation
 
-[![Slack](https://img.shields.io/badge/slack-join-blue.svg)](https://wazuh.com/community/join-us-on-slack/)
-[![Email](https://img.shields.io/badge/email-join-blue.svg)](https://groups.google.com/forum/#!forum/wazuh)
+## Overview
+This project demonstrates the deployment of a centralized **Security Operations Center (SOC)** using **Wazuh** and the **ELK Stack** (Elasticsearch, Logstash, Kibana). The goal is to monitor system logs, detect intrusions, and visualize security threats in real-time.
 
-## Description
 
-The `wazuh/wazuh-docker` repository provides resources to deploy the Wazuh cybersecurity platform using Docker containers. This setup enables easy installation and orchestration of the full Wazuh stack, including the Wazuh server, dashboard (based on OpenSearch Dashboards), and OpenSearch for indexing and search.
 
-## Capabilities
+## Architecture
+- **Wazuh Manager:** Centralized engine for analyzing log data and triggering alerts.
+- **ELK Stack:** Used for indexing (Elasticsearch) and visualizing (Kibana) security events.
+- **Wazuh Agents:** Installed on endpoints (Linux/Windows) to collect logs and monitor file integrity.
 
-- Full deployment of the Wazuh stack using Docker.
-- `docker compose` support for orchestration.
-- Scalable architecture with multi-node support.
-- Data persistence through configurable volumes.
-- Ready-to-use configurations for production or testing environments.
 
-## Branch Convention
 
-- `main`: Developing and testing of new features.
-- `X.Y.Z`: Version-specific branches (e.g., `5.0.0`, `4.14.0`, etc.).
+## Features Implemented
+- **Real-time Log Analysis:** Processing system and application logs.
+- **File Integrity Monitoring (FIM):** Tracking unauthorized changes to sensitive system files.
+- **Vulnerability Detection:** Automated scanning for outdated or insecure software versions.
+- **MITRE ATT&CK Mapping:** Visualizing alert data based on known adversary tactics and techniques.
 
-## Documentation
+## How to Run
+1. Ensure Docker & Docker Compose are installed.
+2. Clone this repository.
+3. Navigate to the single-node directory: `cd single-node`.
+4. Start the stack: `docker-compose up -d`.
+5. Access the Dashboard at `https://localhost`.
 
-Official documentation is available at:
-
-[https://documentation.wazuh.com/current/deployment-options/docker/index.html](https://documentation.wazuh.com/current/deployment-options/docker/index.html)
-
-You can also explore internal documentation in the [`docs`](https://github.com/wazuh/wazuh-docker/tree/main/docs) folder of this repository.
-
-## Get Involved
-
-- **Fork the repository** and create your own branches to add features or fix bugs.
-- **Open issues** to report bugs or request features.
-- **Submit pull requests** following the contributing guidelines.
-- Participate in [discussions](https://github.com/wazuh/wazuh-docker/discussions) if available.
-
-## Authors / Maintainers
-
-These Docker containers are based on:
-
-*  "deviantony" dockerfiles which can be found at [https://github.com/deviantony/docker-elk](https://github.com/deviantony/docker-elk)
-*  "xetus-oss" dockerfiles, which can be found at [https://github.com/xetus-oss/docker-ossec-server](https://github.com/xetus-oss/docker-ossec-server)
-
-This project is maintained by the [Wazuh](https://wazuh.com) team, with active contributions from the community.
-
-See the full list of contributors at:
-[https://github.com/wazuh/wazuh-docker/graphs/contributors](https://github.com/wazuh/wazuh-docker/graphs/contributors)
-
-We thank them and everyone else who has contributed to this project.
-
-## License and copyright
-
-Wazuh Docker Copyright (C) 2017, Wazuh Inc. (License GPLv2)
-
-## Web references
-
-[Wazuh website](http://wazuh.com)
+---
+*Note: This lab is built for educational purposes and security research.*
