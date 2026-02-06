@@ -1,0 +1,6 @@
+[book]
+title = "Wazuh Docker Documentation"
+description = "Technical documentation for Wazuh Docker deployment."
+authors = ["Victor Erenu"]
+src = "."
+language = "en"
